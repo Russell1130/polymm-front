@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { Link,useParams } from "react-router-dom";
 import "../assets/css/Vault.css";
-import { FaList, FaTwitter, FaMedium, FaDiscord, FaTelegramPlane, FaBackspace } from "react-icons/fa";
+import { FaList, FaTwitter, FaMedium, FaDiscord, FaTelegramPlane } from "react-icons/fa";
 import { BsChevronDown, BsList } from 'react-icons/bs';
-import { IoIosInformationCircleOutline } from 'react-icons/io';
-import { FaBackward } from 'react-icons/fa';
+import { IoIosInformationCircleOutline, IoArrowBackOutline } from 'react-icons/io'
 import { MdMoreHoriz } from 'react-icons/md';
 import { useEffect } from "react";
 import * as con from "../constants.js";
@@ -130,7 +129,7 @@ const VaultIndex = () => {
 
             <div className="px-20 py-4 text-white">
                 <Link to="/vault" className="">
-                    <FaBackspace className="text-2xl text-white"/>
+                    <IoArrowBackOutline className="text-2xl text-white"/>
                     Back
                 </Link>
                 <div className="w-full flex">
