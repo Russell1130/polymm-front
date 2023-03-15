@@ -3,7 +3,7 @@ import { Link,useParams } from "react-router-dom";
 import "../assets/css/Vault.css";
 import { FaList, FaTwitter, FaMedium, FaDiscord, FaTelegramPlane } from "react-icons/fa";
 import { BsChevronDown, BsList } from 'react-icons/bs';
-import { IoIosInformationCircleOutline, IoArrowBackOutline } from 'react-icons/io'
+import { IoIosInformationCircleOutline, IoIosArrowBack } from 'react-icons/io'
 import { MdMoreHoriz } from 'react-icons/md';
 import { useEffect } from "react";
 import * as con from "../constants.js";
@@ -128,9 +128,9 @@ const VaultIndex = () => {
             </div>
 
             <div className="px-20 py-4 text-white">
-                <Link to="/vault" className="">
-                    <IoArrowBackOutline className="text-2xl text-white"/>
-                    Back
+                <Link to="/vault" className="flex flex-row pb-4">
+                    <IoIosArrowBack className="text-2xl text-white"/>
+                    <span>Back</span>
                 </Link>
                 <div className="w-full flex">
                     <div onClick={setStake} className={`${dat.type2=="Single"?"w-1/2":"w-1/3"} py-4 font-bold text-center cursor-pointer rounded-t-md hover:bg-gray-700 ${head==0?"bg-gray-800":""}`}>Stake</div>
