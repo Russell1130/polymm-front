@@ -103,8 +103,7 @@ const Vault = () => {
         <div className="v-navbar flex flex-row text-gray-400 mt-4 mb-4">
           <BsList className="ml-3 text-white text-4xl block md:hidden hover:bg-purple-700 rounded-md" onClick={handleMenu} />
           <Link to="/" className="flex flex-row pl-4 hidden md:flex">
-            <img className="p-2" src="./img/vault-logo.png"></img>
-            <div className="pt-4 text-white font-bold">$0.070</div>
+            <img className="p-2" src="./img/logo.png"></img>
           </Link>
           <div className="right-0 flex flex-row mr-5">
             <div className="hidden md:flex">
