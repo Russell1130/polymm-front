@@ -49,7 +49,6 @@ const Navbar = () => {
             <Link to="/">Pools</Link>
             <Link to="/vault" className="rounded-b-lg">
               Vaults
-              <FaSignOutAlt className="float-right" style={{height:"30px"}} />
             </Link>
           </div>
       </Link>
