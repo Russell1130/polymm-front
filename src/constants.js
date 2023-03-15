@@ -8,6 +8,8 @@ export const vaultList = [
         Earn:"WMATIC",
         Platform:"Polymm.Finance",
         TVL:99355.62,
+        Staked:0,
+        Profit:0,
     },
     {
         type1:"Auto",
@@ -17,6 +19,8 @@ export const vaultList = [
         Earn:"MMO+MMF",
         Platform:"Polymm.Finance",
         TVL:84766.54,
+        Staked:0,
+        Profit:0,
     },
     {
         type1:"Auto",
@@ -26,6 +30,8 @@ export const vaultList = [
         Earn:"MMO+MMF",
         Platform:"Polymm.Finance",
         TVL:54728.99,
+        Staked:0,
+        Profit:0,
     },
     {
         type1:"Auto",
@@ -35,6 +41,8 @@ export const vaultList = [
         Earn:"MMO+MMF",
         Platform:"Polymm.Finance",
         TVL:99080.52,
+        Staked:0,
+        Profit:0,
     },
     {
         type1:"Auto",
@@ -44,6 +52,8 @@ export const vaultList = [
         Earn:"MMO+MMF",
         Platform:"Polymm.Finance",
         TVL:2706.47,
+        Staked:0,
+        Profit:0,
     },
     {
         type1:"Auto",
@@ -53,6 +63,8 @@ export const vaultList = [
         Earn:"MMO+MMF",
         Platform:"Polymm.Finance",
         TVL:3470.60,
+        Staked:0,
+        Profit:0,
     },
     {
         type1:"Auto",
@@ -62,6 +74,8 @@ export const vaultList = [
         Earn:"MMO+MMF",
         Platform:"Polymm.Finance",
         TVL:5670.11,
+        Staked:0,
+        Profit:0,
     },
     {
         type1:"Auto",
@@ -71,6 +85,8 @@ export const vaultList = [
         Earn:"MMO+MMF",
         Platform:"Polymm.Finance",
         TVL:722.67,
+        Staked:0,
+        Profit:0,
     },
     {
         type1:"Auto",
@@ -80,6 +96,8 @@ export const vaultList = [
         Earn:"MMO+MMF",
         Platform:"Polymm.Finance",
         TVL:983.15,
+        Staked:0,
+        Profit:0,
     },
     {
         type1:"Auto",
@@ -89,6 +107,8 @@ export const vaultList = [
         Earn:"MMO-MMF",
         Platform:"Polymm.Finance",
         TVL:24212.75,
+        Staked:0,
+        Profit:0,
     },
     {
         type1:"Auto",
@@ -98,6 +118,8 @@ export const vaultList = [
         Earn:"DSF-MMF",
         Platform:"Polymm.Finance",
         TVL:67637.67,
+        Staked:0,
+        Profit:0,
     },
     {
         type1:"Auto",
@@ -107,6 +129,8 @@ export const vaultList = [
         Earn:"SOLAR-MMF",
         Platform:"Polymm.Finance",
         TVL:33755.13,
+        Staked:0,
+        Profit:0,
     },
     {
         type1:"Auto",
@@ -116,5 +140,7 @@ export const vaultList = [
         Earn:"SOLAR-DSF",
         Platform:"Polymm.Finance",
         TVL:91986.33,
+        Staked:0,
+        Profit:0,
     },
 ];

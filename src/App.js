@@ -6,13 +6,14 @@ import Vault from "./pages/Vault";
 import Header from "./components/Header"
 import Footer from "./components/Footer";
 import { ThemeProvider } from "./context/ThemeContext";
+import VaultIndex from "./pages/VaultIndex";
 
 function App() {
 
     return (
         <ThemeProvider>
           <BrowserRouter>
-            <Routes >
+            <Routes>
               <Route path="/" element={
                 <>
                 <Header />
@@ -21,6 +22,7 @@ function App() {
                 </>
                 } />
               <Route path="/vault" element={<Vault />} />
+              <Route path="/vault/:id" element={<VaultIndex />} />
             </Routes>
           </BrowserRouter>
         </ThemeProvider>

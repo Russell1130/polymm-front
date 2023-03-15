@@ -6,6 +6,7 @@ import { BsChevronDown, BsList } from 'react-icons/bs';
 import { MdMoreHoriz } from 'react-icons/md';
 import { useEffect } from "react";
 import * as con from "../constants.js";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 
 var options = {
   'first' : false,
@@ -13,10 +14,6 @@ var options = {
 }
 
 const Vault = () => {
-  const listStyle = {
-    "textDecoration": "none",
-    "color": "black"
-  };
 
   const [ openM, setOpenM ] = useState(false);
   const [ openS, setOpenS ] = useState(false);
@@ -28,7 +25,6 @@ const Vault = () => {
 
   useEffect(() => {
     const handleMouseClick = (event) => {
-      console.log(event);
       if(event.target.innerText=="Default" || event.target.innerText=="TVL" || event.target.innerText=="APY") {
         setKey(event.target.innerText);
       }
@@ -70,7 +66,7 @@ const Vault = () => {
   }
 
   const listItems = con.vaultList.map((element) => 
-    <div className="myitems flex text-center items-center cursor-pointer">
+    <Link to={`/vault/${element.name}`} className="myitems flex text-center items-center cursor-pointer">
       <div className="flex justify-center py-4 w-1/3 relative">
         <div className="w-1/3 float-right relative">
         {
@@ -94,7 +90,7 @@ const Vault = () => {
       <div className="w-1/6 text-white">{element.Earn}</div>
       <div className="w-1/6 text-white">{element.Platform}</div>
       <div className="w-1/6 text-white">${element.TVL.toLocaleString("en-US")}</div>
-    </div>
+    </Link>
   );
 
   return (
