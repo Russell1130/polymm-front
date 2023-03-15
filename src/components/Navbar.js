@@ -47,7 +47,7 @@ const Navbar = () => {
         <div className="dropdown-content mt-3">
             <Link to="/" className="rounded-t-lg">Farms</Link>
             <Link to="/">Pools</Link>
-            <Link className="rounded-b-lg" onClick={openVault} >
+            <Link to="/vault" className="rounded-b-lg">
               Vaults
               <FaSignOutAlt className="float-right" style={{height:"30px"}} />
             </Link>

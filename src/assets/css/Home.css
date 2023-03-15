@@ -49,7 +49,7 @@
     background-image: linear-gradient(to bottom, rgb(56, 81, 178) , rgb(222, 67, 191));
 }
 .trade:hover {
-    background-image: linear-gradient(to bottom, rgb(56, 81, 178) , rgb(222, 67, 191));
+    background-image: linear-gradient(to bottom, rgba(56, 80, 178, 0.651) , rgba(222, 67, 191, 0.527));
 }
 .anim-star {
     animation: star 3s;
