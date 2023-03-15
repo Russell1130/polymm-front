@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Link,useParams } from "react-router-dom";
 import "../assets/css/Vault.css";
-import { FaList, FaTwitter, FaMedium, FaDiscord, FaTelegramPlane } from "react-icons/fa";
+import { FaList, FaTwitter, FaMedium, FaDiscord, FaTelegramPlane, FaBackspace } from "react-icons/fa";
 import { BsChevronDown, BsList } from 'react-icons/bs';
-import { IoIosInformationCircleOutline } from 'react-icons/io'
+import { IoIosInformationCircleOutline } from 'react-icons/io';
+import { FaBackward } from 'react-icons/fa';
 import { MdMoreHoriz } from 'react-icons/md';
 import { useEffect } from "react";
 import * as con from "../constants.js";
@@ -27,6 +28,7 @@ const VaultIndex = () => {
 
     const tip1 = "The APY may not reflect the actual percentage and should be used as an estimate. To achieve the target APY, it is important to stake for a longer period of time because of the auto-compounding maximizer effect."
     const tip2 = "The rewards shown are estimates and will only be realized on claim";
+    const tip3 = "The net APR comes from both emissions from dividend pool as well as trading fees earned by being an LP holder.";
 
     var dat;
     for(var i = 0; i< con.vaultList.length; i ++)
@@ -127,7 +129,10 @@ const VaultIndex = () => {
             </div>
 
             <div className="px-20 py-4 text-white">
-                <Link to="/vault" className="">Back</Link>
+                <Link to="/vault" className="">
+                    <FaBackspace className="text-2xl text-white"/>
+                    Back
+                </Link>
                 <div className="w-full flex">
                     <div onClick={setStake} className={`${dat.type2=="Single"?"w-1/2":"w-1/3"} py-4 font-bold text-center cursor-pointer rounded-t-md hover:bg-gray-700 ${head==0?"bg-gray-800":""}`}>Stake</div>
                     <div onClick={setBoost} className={`${dat.type2=="Single"?"hidden":"w-1/3"} py-4 font-bold text-center cursor-pointer rounded-t-md hover:bg-gray-700 ${head==1?"bg-gray-800":""}`}>Boost</div>
@@ -162,7 +167,7 @@ const VaultIndex = () => {
                     </div>
                     <div className={`${dat.type2=="Single"?"hidden":""} flex pb-2 relative`}>
                         <div className="pr-2">Fee APR</div>
-                        <Tooltip tooltipText={tip1}>
+                        <Tooltip tooltipText={tip3}>
                             <IoIosInformationCircleOutline data-tooltip-target="tooltip-default" type="button" className="text-2xl"/>
                         </Tooltip>
                         <div className="absolute right-0">{dat.APY/3}%</div>
