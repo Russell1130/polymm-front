@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import "../assets/css/Header.css";
 import { MdClose } from "react-icons/md";
 import Navbar from "./Navbar";
@@ -40,7 +39,7 @@ const Header = () => {
   return (
     <>
     <div className={`header ${ scrollDirection === "down" ? "hidden" : "block"}`}>
-      <div className="flex flex-row w-full text-left px-2 md:text-center py-5"  style={{display:vis&scrollDirection!="down"?"":"none"}}>
+      <div className="flex flex-row w-full text-left px-2 md:text-center py-5"  style={{display:vis&scrollDirection!=="down"?"":"none"}}>
         <div style={{width:"100%"}}>
           <span>PHISHING WARNING:</span>
           &nbsp;&nbsp;

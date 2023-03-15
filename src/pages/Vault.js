@@ -1,17 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../assets/css/Vault.css";
-import { FaList, FaTwitter, FaMedium, FaDiscord, FaTelegramPlane } from "react-icons/fa";
+import { FaTwitter, FaMedium, FaDiscord, FaTelegramPlane } from "react-icons/fa";
 import { BsChevronDown, BsList } from 'react-icons/bs';
 import { MdMoreHoriz } from 'react-icons/md';
 import { useEffect } from "react";
 import * as con from "../constants.js";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
-
-var options = {
-  'first' : false,
-  'second' : true,
-}
 
 const Vault = () => {
 
@@ -25,7 +19,7 @@ const Vault = () => {
 
   useEffect(() => {
     const handleMouseClick = (event) => {
-      if(event.target.innerText=="Default" || event.target.innerText=="TVL" || event.target.innerText=="APY") {
+      if(event.target.innerText==="Default" || event.target.innerText==="TVL" || event.target.innerText==="APY") {
         setKey(event.target.innerText);
       }
       setOpenM(false);
@@ -49,11 +43,11 @@ const Vault = () => {
   }
 
   const handlePool = () => {
-    setPool(!pool);
+    if(single===true) setPool(!pool);
   }
 
   const handleSingle = () => {
-    setSingle(!single);
+    if(pool===true) setSingle(!single);
   }
 
   const handleOpenD = () => {
@@ -61,20 +55,21 @@ const Vault = () => {
   }
 
   const handleMenu = () => {
-    if(menu=="hidden") setMenu("relative flex flex-col pl-4 pt-8 bg-gray-800");
+    if(menu==="hidden") setMenu("relative flex flex-col pl-4 pt-8 bg-gray-800");
     else setMenu("hidden");
   }
 
   const listItems = con.vaultList.map((element) => 
+    (single===true && element.type2==="Single") || (pool===true && element.type2==="Liquidity Pool")?
     <Link to={`/vault/${element.name}`} className="myitems flex text-center items-center cursor-pointer">
       <div className="flex justify-center py-4 w-1/3 relative">
         <div className="w-1/3 float-right relative">
         {
-        element.name.indexOf('-')==-1?
-        <img className="absolute h-12" style={{right:"10px"}} src={"./img/"+element.name+".svg"}></img>
+        element.name.indexOf('-')===-1?
+        <img alt="file not found" className="absolute h-12" style={{right:"10px"}} src={"./img/"+element.name+".svg"}></img>
         :<div>
-          <img className="absolute h-8" style={{right:"20px"}} src={"./img/"+element.name.split('-')[1]+".svg"}></img>
-          <img className="absolute h-8" style={{top:"15px", right:"10px"}} src={"./img/"+element.name.split('-')[0]+".svg"}></img>
+          <img alt="file not found" className="absolute h-8" style={{right:"20px"}} src={"./img/"+element.name.split('-')[1]+".svg"}></img>
+          <img alt="file not found" className="absolute h-8" style={{top:"15px", right:"10px"}} src={"./img/"+element.name.split('-')[0]+".svg"}></img>
         </div>
         }
         </div>
@@ -90,7 +85,7 @@ const Vault = () => {
       <div className="w-1/6 text-white">{element.Earn}</div>
       <div className="w-1/6 text-white">{element.Platform}</div>
       <div className="w-1/6 text-white">${element.TVL.toLocaleString("en-US")}</div>
-    </Link>
+    </Link>:<></>
   );
 
   return (
@@ -99,7 +94,7 @@ const Vault = () => {
         <div className="v-navbar flex flex-row text-gray-400 mt-4 mb-4">
           <BsList className="ml-3 text-white text-4xl block md:hidden hover:bg-purple-700 rounded-md" onClick={handleMenu} />
           <Link to="/" className="flex flex-row pl-4 hidden md:flex">
-            <img className="p-2" src="./img/logo.png"></img>
+            <img alt="file not found" className="p-2" src="./img/logo.png"></img>
           </Link>
           <div className="right-0 flex flex-row mr-5">
             <div className="hidden md:flex">
@@ -186,9 +181,9 @@ const Vault = () => {
             onClick={handleSingle}>
               Single
           </div>
-          <input className="text-white bg-gray-700 text-center rounded-md" placeholder="Search by name" />
+          <input className="text-white bg-gray-700 text-center rounded-md focus:outline-double outline-2 outline-purple-600" placeholder="Search by name" />
           <div className="absolute right-0">
-            <a className="v-dropdown2 cursor-pointer" onClick={handleOpenD}>
+            <Link className="v-dropdown2 cursor-pointer" onClick={handleOpenD}>
               <div className="flex">
                 <div>{key}</div>
                 <BsChevronDown />
@@ -198,7 +193,7 @@ const Vault = () => {
                 <Link>TVL</Link>
                 <Link className="rounded-b-lg">APY</Link>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
 
